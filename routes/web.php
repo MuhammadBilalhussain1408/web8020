@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'question');
+Route::view('/thank-you', 'thankyou');
