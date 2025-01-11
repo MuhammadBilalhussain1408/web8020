@@ -260,7 +260,8 @@
 <!-- MultiStep Form -->
 <div class="row">
     <div class="col-md-12">
-        <form id="msform">
+        <form action="{{route('storeQuestions')}}" method="POST" id="msform">
+            @csrf
             <!-- progressbar -->
             <ul id="progressbar">
                 <li class="active">Personal Details</li>
@@ -275,7 +276,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="fullname">Full Name</label>
-                        <input name="fullname"
+                        <input name="full_name"
                                type="text"
                                id="fullname"
                                placeholder="First Name">
@@ -295,14 +296,14 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="companyname">Company/Business Name</label>
-                        <input name="companyname"
+                        <input name="company_name"
                                type="text"
                                id="companyname"
                                placeholder="Company/Business Name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Industrytype">Industry Type</label>
-                        <input name="Industrytype"
+                        <input name="industry_type"
                                type="text"
                                id="Industrytype"
                                placeholder="Industry Type">
@@ -317,7 +318,7 @@
                     <div class="form-group col-md-6">
                         <label for="primarypurpose">What is the primary purpose of the website?</label><br>
                         <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">(e.g., e-commerce, portfolio, blog, informational, lead generation)</h5>
-                        <input name="primarypurpose"
+                        <input name="purpose"
                                type="text"
                                id="primarypurpose"
                                placeholder="What is the primary purpose of the website?">
@@ -325,28 +326,28 @@
                     <div class="form-group col-md-6">
                         <label for="existingwebsite">Do you have an existing website?</label><br>
                         <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">If yes, please provide the URL:</h5>
-                        <input name="existingwebsite"
+                        <input name="existing_website"
                                type="text"
                                id="existingwebsite"
                                placeholder="Do you have an existing website?">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="specificdesign">Do you have specific design preferences or examples of websites you like?</label>
-                        <input name="specificdesign"
+                        <input name="example_website"
                                type="text"
                                id="specificdesign"
                                placeholder="Do you have specific design preferences or examples of websites you like?">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="existinglogo">Do you have an existing logo?</label>
-                        <input name="existinglogo"
+                        <input name="existing_logo"
                                type="text"
                                id="existinglogo"
                                placeholder="Do you have an existing logo?">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="assistance">Do you need assistance with content creation?</label>
-                        <input name="assistance"
+                        <input name="req_assistance"
                                type="text"
                                id="assistance"
                                placeholder="Do you need assistance with content creation?">
@@ -361,7 +362,7 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label for="imagesvideos">Please provide text, images, videos that you would like to appear on your website?</label>
-                        <input name="imagesvideos"
+                        <input name="appear_data"
                                type="text"
                                id="imagesvideos"
                                placeholder="Please provide text, images, videos that you would like to appear on your website?">
@@ -369,14 +370,14 @@
                     <div class="form-group col-md-12">
                         <label for="keyfeatures">List 3-5 Key features you would like to have on your website?</label><br>
                         <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">(e.g., contact forms, online booking, payment gateways, live chat, blog)</h5>
-                        <input name="keyfeatures"
+                        <input name="req_key_feature"
                                type="text"
                                id="keyfeatures"
                                placeholder="List 3-5 Key features you would like to have on your website?">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="integrations">Do you need any integrations?</label>
-                        <input name="integrations"
+                        <input name="req_integration"
                                type="text"
                                id="integrations"
                                placeholder="(e.g., social media, email marketing, CRM, analytics)">
@@ -391,28 +392,28 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="hostingprovider">Do you have a domain name and hosting provider?</label><br>
-                        <input name="hostingprovider"
+                        <input name="existing_hosting_domain"
                                type="text"
                                id="hostingprovider"
                                placeholder="Do you have a domain name and hosting provider?">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="completiondate">What is your desired project completion date?</label><br>
-                        <input name="completiondate"
+                        <input name="req_completed_date"
                                type="text"
                                id="completiondate"
                                placeholder="What is your desired project completion date?">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="information">Is there any other information you’d like to share about your project?</label>
-                        <input name="information"
+                        <input name="other_project_info"
                                type="text"
                                id="information"
                                placeholder="Is there any other information you’d like to share about your project?">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="multiplepages">Are you interested in getting a One Pager website made or a website with multiple pages?</label>
-                        <input name="multiplepages"
+                        <input name="one_or_multiple_page"
                                type="text"
                                id="multiplepages"
                                placeholder="Are you interested in getting a One Pager website made or a website with multiple pages?">
@@ -421,6 +422,7 @@
                         <input type="checkbox"
                                class="form-check-input"
                                id="exampleCheck1"
+                               name="agree_terms"
                                style="width: auto;">
                         <label class="form-check-label" for="exampleCheck1">
                             Do you agree to our terms and conditions for website development services?
@@ -428,7 +430,7 @@
                     </div>
                 </div>
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                <button type="submit" name="submit" class="submit action-button" value="Submit" >Submit</button>
             </fieldset>
         </form>
     </div>
@@ -524,9 +526,9 @@
         });
     });
 
-    $(".submit").click(function(){
-        return false;
-    })
+ //   $(".submit").click(function(){
+ //       return false;
+ //   })
 </script>
 
 

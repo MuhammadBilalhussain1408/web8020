@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'question');
 Route::view('/thank-you', 'thankyou');
+Route::post('save-questions',[QuestionController::class,'storeQuestions'])->name('storeQuestions');

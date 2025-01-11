@@ -61,7 +61,7 @@
 <div class="row">
     <div class="col-md-12">
         <p class="abr-para" style="text-align: center;font-size: 25px;">
-            <span style="color: #e1612e;font-weight: bold;">"Hi Abdul Rehman",</span><br>
+            <span style="color: #e1612e;font-weight: bold;">"Hi {{$full_name}}",</span><br>
             Thank you for taking the time to fill out our website questionnaire. We’ve received your responses and will review them to better understand your project needs.
             Our team will get in touch with you shortly to discuss the next steps.
         </p>
@@ -78,7 +78,7 @@
 
 
 <script>
-    
+
 </script>
 
 

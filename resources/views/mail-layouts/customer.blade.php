@@ -109,7 +109,7 @@
                                     <td class="sm-px-24"
                                         style="background-color: #ffffff; border-radius: 4px; font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 24px; padding: 48px; text-align: left; color: black;">
                                         <p style="font-weight: 700; font-size: 20px; margin-top: 0; color: #ff5850; text-align: center;">
-                                            Hi "{{$data['name']}}",
+                                            Hi "{{$data['full_name']}}",
                                         </p>
                                         <p style=" font-size: 16px; margin-top: 0; text-align: center;">
                                             Thank you for reaching out to us! We appreciate your interest and can’t wait to connect with you!

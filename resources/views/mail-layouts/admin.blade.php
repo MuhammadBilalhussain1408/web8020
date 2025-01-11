@@ -109,7 +109,7 @@
                                     <td class="sm-px-24"
                                         style="background-color: #ffffff; border-radius: 4px; font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 24px; padding: 48px; text-align: left; color: black;">
                                         <h1 style="font-family: 'DM Sans',serif;font-weight: bold; margin-top: 0; color: #ff5850; text-align: center;padding-bottom: 20px;">
-                                            80/20 CEO Membership Form
+                                            Website Questionnaire Form
                                         </h1>
                                         <table style="text-align: left;width: 100%;border-collapse: collapse; display: grid;">
                                             <tr style="display: grid;">
@@ -120,7 +120,7 @@
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['name']}}
+                                                        {{@$data['full_name']}}
                                                     </span>
                                                 </td>
                                             </tr>
@@ -139,108 +139,192 @@
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Why are you interested in becoming an 80/20 CEO member?
+                                                        Phone Number
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['is_becoming_member']}}
+                                                        {{@$data['phone']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        What type of Membership are you looking for?
+                                                        Company/Business Name
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['membershipType']}}
+                                                        {{@$data['company_name']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Are you interested in using the 80/20 Eatery as your business address? <br> (Mailbox +$25 monthly)
+                                                        Industry Type
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['interested_in_use']}}
+                                                        {{@$data['industry_type']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Do you need assistance with any of the following?
+                                                        What is the primary purpose of the website?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['assistence']}}
+                                                        {{@$data['purpose']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        What services or amenities are most important to you?
+                                                        Do you have an existing website?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['services']}}
+                                                        {{@$data['existing_website']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        What are your goals for joining the 80/20 CEO Membership?
+                                                        Do you have specific design preferences or examples of websites you like?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['goals']}}
+                                                        {{@$data['example_website']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Are you currently working on a specific project or initiative?
+                                                        Do you have an existing logo?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['current_projectVal'] ? @$data['current_projectVal'] :'No'}}
+                                                        {{@$data['existing_logo']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Is there anything specific you’d like to learn or see during your tour?
+                                                        Do you need assistance with content creation?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['tour'] }}
+                                                        {{@$data['req_assistance']}}
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Anything else you’d like us to know about you?
+                                                        Please provide text, images, videos that you would like to appear on your website?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['appear_data'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        List 3-5 Key features you would like to have on your website?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['req_key_feature'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        Do you need any integrations?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['req_integration'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        Do you have a domain name and hosting provider?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['existing_hosting_domain'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        What is your desired project completion date?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['req_completed_date'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        Is there any other information you’d like to share about your project?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['other_project_info'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        Are you interested in getting a One Pager website made or a website with multiple pages?
+                                                    </span>
+                                                </td>
+                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
+                                                    <span>
+                                                        {{@$data['one_or_multiple_page'] }}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="display: grid;">
+                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
+                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
+                                                        Do you agree to our terms and conditions for website development services?
                                                     </span>
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-bottom: 1px solid black; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['about'] }}
+                                                        {{@$data['agree_terms'] }}
                                                     </span>
                                                 </td>
                                             </tr>
