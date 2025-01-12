@@ -260,7 +260,6 @@
                 margin: auto;
             }
 
-
         }
     </style>
 
@@ -283,29 +282,43 @@
                 </ul>
                 <!-- fieldsets -->
                 <fieldset>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                     <h2 class="fs-title">Basic Information</h2>
                     <h3 class="fs-subtitle">Tell us something more about you</h3>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="fullname">Full Name</label>
-                            <input name="full_name" type="text" id="fullname" placeholder="First Name">
+                            <input name="full_name" type="text" id="fullname" value="{{old('full_name')}}" placeholder="First Name">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email Address</label>
-                            <input name="email" type="email" id="email" placeholder="Email Address">
+                            <input name="email" type="email" id="email" value="{{old('email')}}" placeholder="Email Address">
+                            @error('email')
+                                <span class="text-danger">
+                                    {{ $errors->first('email') }}
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Phone Number</label>
-                            <input name="phone" type="tel" id="phone" placeholder="Phone Number">
+                            <input name="phone" type="tel" id="phone" value="{{old('phone')}}" placeholder="Phone Number">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="companyname">Company/Business Name</label>
-                            <input name="company_name" type="text" id="companyname"
+                            <input name="company_name" type="text" value="{{old('company_name')}}" id="companyname"
                                 placeholder="Company/Business Name">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Industrytype">Industry Type</label>
-                            <input name="industry_type" type="text" id="Industrytype" placeholder="Industry Type">
+                            <input name="industry_type" type="text" value="{{old('industry_type')}}" id="Industrytype" placeholder="Industry Type">
                         </div>
                     </div>
                     <input type="button" name="next" class="next action-button" value="Next" />
@@ -318,30 +331,30 @@
                             <label for="primarypurpose">What is the primary purpose of the website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., e-commerce, portfolio, blog, informational, lead generation)</h5>
-                            <input name="purpose" type="text" id="primarypurpose"
+                            <input name="purpose" type="text" id="primarypurpose" value="{{old('purpose')}}"
                                 placeholder="What is the primary purpose of the website?">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existingwebsite">Do you have an existing website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 If yes, please provide the URL:</h5>
-                            <input name="existing_website" type="text" id="existingwebsite"
+                            <input name="existing_website" type="text" id="existingwebsite" value="{{old('existing_website')}}"
                                 placeholder="Do you have an existing website?">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="specificdesign">Do you have specific design preferences or examples of websites
                                 you like?</label>
-                            <input name="example_website" type="text" id="specificdesign"
+                            <input name="example_website" type="text" id="specificdesign" value="{{old('example_website')}}"
                                 placeholder="Do you have specific design preferences or examples of websites you like?">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existinglogo">Do you have an existing logo?</label>
-                            <input name="existing_logo" type="text" id="existinglogo"
+                            <input name="existing_logo" type="text" id="existinglogo" value="{{old('existing_logo')}}"
                                 placeholder="Do you have an existing logo?">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="assistance">Do you need assistance with content creation?</label>
-                            <input name="req_assistance" type="text" id="assistance"
+                            <input name="req_assistance" type="text" id="assistance" value="{{old('req_assistance')}}"
                                 placeholder="Do you need assistance with content creation?">
                         </div>
                     </div>
@@ -355,7 +368,7 @@
                         <div class="form-group col-md-12">
                             <label for="imagesvideos">Please provide text, images, videos that you would like to appear
                                 on your website?</label>
-                            <input name="appear_data" type="text" id="imagesvideos"
+                            <input name="appear_data" type="text" value="{{old('appear_data')}}" id="imagesvideos"
                                 placeholder="Please provide text, images, videos that you would like to appear on your website?">
                         </div>
                         <div class="form-group col-md-12">
@@ -364,12 +377,12 @@
                             <h5
                                 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., contact forms, online booking, payment gateways, live chat, blog)</h5>
-                            <input name="req_key_feature" type="text" id="keyfeatures"
+                            <input name="req_key_feature" type="text"  value="{{old('req_key_feature')}}"id="keyfeatures"
                                 placeholder="List 3-5 Key features you would like to have on your website?">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="integrations">Do you need any integrations?</label>
-                            <input name="req_integration" type="text" id="integrations"
+                            <input name="req_integration" type="text" id="integrations" value="{{old('req_integration')}}"
                                 placeholder="(e.g., social media, email marketing, CRM, analytics)">
                         </div>
                     </div>
@@ -383,29 +396,29 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="hostingprovider">Do you have a domain name and hosting provider?</label><br>
-                            <input name="existing_hosting_domain" type="text" id="hostingprovider"
+                            <input name="existing_hosting_domain" type="text" value="{{old('existing_hosting_domain')}}" id="hostingprovider"
                                 placeholder="Do you have a domain name and hosting provider?">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="completiondate">What is your desired project completion date?</label><br>
-                            <input name="req_completed_date" type="text" id="completiondate"
+                            <input name="req_completed_date" type="text" id="completiondate" value="{{old('req_completed_date')}}"
                                 placeholder="What is your desired project completion date?">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="information">Is there any other information you’d like to share about your
                                 project?</label>
-                            <input name="other_project_info" type="text" id="information"
+                            <input name="other_project_info" type="text" id="information" value="{{old('other_project_info')}}"
                                 placeholder="Is there any other information you’d like to share about your project?">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="multiplepages">Are you interested in getting a One Pager website made or a
                                 website with multiple pages?</label>
-                            <input name="one_or_multiple_page" type="text" id="multiplepages"
+                            <input name="one_or_multiple_page" type="text" id="multiplepages" value="{{old('one_or_multiple_page')}}"
                                 placeholder="Are you interested in getting a One Pager website made or a website with multiple pages?">
                         </div>
                         <div class="form-group form-check col-md-12">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agree_terms"
-                                style="width: auto;">
+                                style="width: auto;" {{ old('agree_terms') ? 'checked' : '' }}>
                             <label class="form-check-label" for="exampleCheck1">
                                 Do you agree to our terms and conditions for website development services?
                             </label>
@@ -413,9 +426,10 @@
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous"
                         value="Previous" />
-                    <button type="submit" name="submit" class="submit action-button"
+                    <button type="submit" name="submit" class="submit action-button" disabled id="submitBtn"
                         value="Submit">Submit</button>
-                </fieldset>
+                    </fieldset>
+                    <input type="hidden" name="g-recaptcha-token" id="g-recaptcha-token">
             </form>
         </div>
     </div>
@@ -635,9 +649,32 @@
         //   $(".submit").click(function(){
         //       return false;
         //   })
+        $('#exampleCheck1').on('change',function(){
+            if(this.checked){
+                $('#submitBtn').attr('disabled',false);
+            }else{
+                $('#submitBtn').attr('disabled',true);
+            }
+        })
+        $('#submitBtn').on('click',function(){
+            this.value = 'Wait...'
+            $('#submitBtn').text('Wait...');
+        })
     </script>
+ <script src="https://www.google.com/recaptcha/api.js?render=6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT"></script>
+ <script>
+     grecaptcha.ready(function() {
+         grecaptcha.execute('6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT', {
+             action: 'submit'
+         }).then(function(token) {
+             document.getElementById('g-recaptcha-response').value = token;
+             if(document.getElementById('g-recaptcha-token'))
+             document.getElementById('g-recaptcha-token').value = token;
+         });
+     });
 
-
+</script>
+<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
 </body>
 

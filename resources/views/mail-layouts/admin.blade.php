@@ -324,7 +324,7 @@
                                                 </td>
                                                 <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-bottom: 1px solid black; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                                     <span>
-                                                        {{@$data['agree_terms'] }}
+                                                        {{@$data['agree_terms'] ? 'Yes' : 'No' }}
                                                     </span>
                                                 </td>
                                             </tr>
