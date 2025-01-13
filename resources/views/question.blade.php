@@ -245,6 +245,10 @@
             font-weight: 600;
             font-size: 18px;
         }
+        button[disabled], html input[disabled] {
+            cursor: not-allowed !important;
+            background-color: rgb(229, 229, 229) !important;
+        }
 
         @media only screen and (min-width: 360px) and (max-width: 740px),
         only screen and (min-width: 412px) and (max-width: 915px),
@@ -384,15 +388,10 @@
                             <input name="example_website" type="text" id="specificdesign"
                                 value="{{ old('example_website') }}">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="existinglogo">Do you have an existing logo?</label>
                             <input name="existing_logo" type="text" id="existinglogo"
                                 value="{{ old('existing_logo') }}">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="assistance">Do you need assistance with content creation?</label>
-                            <input name="req_assistance" type="text" id="assistance"
-                                value="{{ old('req_assistance') }}">
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -403,11 +402,16 @@
                     <h3 class="fs-subtitle">Please share more details about Content & Functionality</h3>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label for="imagesvideos">Please provide text, images, videos that you would like to appear
-                                on your website?</label>
-                            <input name="appear_data" type="text" value="{{ old('appear_data') }}"
-                                id="imagesvideos">
+                            <label for="assistance">Do you need assistance with content creation?</label>
+                            <input name="req_assistance" type="text" id="assistance"
+                                   value="{{ old('req_assistance') }}">
                         </div>
+{{--                        <div class="form-group col-md-12">--}}
+{{--                            <label for="imagesvideos">Please provide text, images, videos that you would like to appear--}}
+{{--                                on your website?</label>--}}
+{{--                            <input name="appear_data" type="text" value="{{ old('appear_data') }}"--}}
+{{--                                id="imagesvideos">--}}
+{{--                        </div>--}}
                         <div class="form-group col-md-12">
                             <label for="keyfeatures">List 3-5 Key features you would like to have on your
                                 website?</label><br>

@@ -232,18 +232,18 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                            <tr style="display: grid;">
-                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
-                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
-                                                        Please provide text, images, videos that you would like to appear on your website?
-                                                    </span>
-                                                </td>
-                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
-                                                    <span>
-                                                        {{@$data['appear_data'] }}
-                                                    </span>
-                                                </td>
-                                            </tr>
+{{--                                            <tr style="display: grid;">--}}
+{{--                                                <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">--}}
+{{--                                                    <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">--}}
+{{--                                                        Please provide text, images, videos that you would like to appear on your website?--}}
+{{--                                                    </span>--}}
+{{--                                                </td>--}}
+{{--                                                <td style="padding: 5px;font-size: 16px; color: black; font-weight: 400;border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">--}}
+{{--                                                    <span>--}}
+{{--                                                        {{@$data['appear_data'] }}--}}
+{{--                                                    </span>--}}
+{{--                                                </td>--}}
+{{--                                            </tr>--}}
                                             <tr style="display: grid;">
                                                 <td style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;padding: 5px;">
                                                     <span style="font-family: 'DM Sans',serif;font-weight: bold; color: black; font-size: 20px;">
