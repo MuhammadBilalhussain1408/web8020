@@ -261,6 +261,43 @@
 
         }
     </style>
+    {{-- loader --}}
+
+    <style>
+        /* Loader Styling */
+        #loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            z-index: 1000;
+
+        }
+
+        /* Background Blur */
+        .blur {
+            opacity: 0.5;
+            pointer-events: none;
+            /* Disable interactions while blurred */
+        }
+
+        /* Loader Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 
 </head>
 
@@ -270,6 +307,7 @@
     <!-- MultiStep Form -->
     <div class="row">
         <div class="col-md-12">
+            <div id="loader" style="display: none;"></div>
             <form action="{{ route('storeQuestions') }}" method="POST" id="msform">
                 @csrf
                 <!-- progressbar -->
@@ -289,17 +327,17 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @endif
+                    @endif
                     <h2 class="fs-title">Basic Information</h2>
                     <h3 class="fs-subtitle">Tell us something more about you</h3>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="fullname">Full Name</label>
-                            <input name="full_name" type="text" id="fullname" value="{{old('full_name')}}">
+                            <input name="full_name" type="text" id="fullname" value="{{ old('full_name') }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email Address</label>
-                            <input name="email" type="email" id="email" value="{{old('email')}}">
+                            <input name="email" type="email" id="email" value="{{ old('email') }}">
                             @error('email')
                                 <span class="text-danger">
                                     {{ $errors->first('email') }}
@@ -308,15 +346,17 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Phone Number</label>
-                            <input name="phone" type="tel" id="phone" value="{{old('phone')}}">
+                            <input name="phone" type="tel" id="phone" value="{{ old('phone') }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="companyname">Company/Business Name</label>
-                            <input name="company_name" type="text" value="{{old('company_name')}}" id="companyname">
+                            <input name="company_name" type="text" value="{{ old('company_name') }}"
+                                id="companyname">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Industrytype">Industry Type</label>
-                            <input name="industry_type" type="text" value="{{old('industry_type')}}" id="Industrytype">
+                            <input name="industry_type" type="text" value="{{ old('industry_type') }}"
+                                id="Industrytype">
                         </div>
                     </div>
                     <input type="button" name="next" class="next action-button" value="Next" />
@@ -329,26 +369,30 @@
                             <label for="primarypurpose">What is the primary purpose of the website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., e-commerce, portfolio, blog, informational, lead generation)</h5>
-                            <input name="purpose" type="text" id="primarypurpose" value="{{old('purpose')}}">
+                            <input name="purpose" type="text" id="primarypurpose" value="{{ old('purpose') }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existingwebsite">Do you have an existing website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 If yes, please provide the URL:</h5>
-                            <input name="existing_website" type="text" id="existingwebsite" value="{{old('existing_website')}}">
+                            <input name="existing_website" type="text" id="existingwebsite"
+                                value="{{ old('existing_website') }}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="specificdesign">Do you have specific design preferences or examples of websites
                                 you like?</label>
-                            <input name="example_website" type="text" id="specificdesign" value="{{old('example_website')}}">
+                            <input name="example_website" type="text" id="specificdesign"
+                                value="{{ old('example_website') }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existinglogo">Do you have an existing logo?</label>
-                            <input name="existing_logo" type="text" id="existinglogo" value="{{old('existing_logo')}}">
+                            <input name="existing_logo" type="text" id="existinglogo"
+                                value="{{ old('existing_logo') }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="assistance">Do you need assistance with content creation?</label>
-                            <input name="req_assistance" type="text" id="assistance" value="{{old('req_assistance')}}">
+                            <input name="req_assistance" type="text" id="assistance"
+                                value="{{ old('req_assistance') }}">
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -361,21 +405,26 @@
                         <div class="form-group col-md-12">
                             <label for="imagesvideos">Please provide text, images, videos that you would like to appear
                                 on your website?</label>
-                            <input name="appear_data" type="text" value="{{old('appear_data')}}" id="imagesvideos">
+                            <input name="appear_data" type="text" value="{{ old('appear_data') }}"
+                                id="imagesvideos">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="keyfeatures">List 3-5 Key features you would like to have on your
                                 website?</label><br>
-                            <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
+                            <h5
+                                style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., contact forms, online booking, payment gateways, live chat, blog)</h5>
-                            <input name="req_key_feature" type="text"  value="{{old('req_key_feature')}}"id="keyfeatures">
+                            <input name="req_key_feature" type="text"
+                                value="{{ old('req_key_feature') }}"id="keyfeatures">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="integrations">Do you need any integrations?</label><br>
-                            <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
+                            <h5
+                                style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., social media, email marketing, CRM, analytics)
                             </h5>
-                            <input name="req_integration" type="text" id="integrations" value="{{old('req_integration')}}">
+                            <input name="req_integration" type="text" id="integrations"
+                                value="{{ old('req_integration') }}">
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous"
@@ -388,21 +437,25 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="hostingprovider">Do you have a domain name and hosting provider?</label><br>
-                            <input name="existing_hosting_domain" type="text" value="{{old('existing_hosting_domain')}}" id="hostingprovider">
+                            <input name="existing_hosting_domain" type="text"
+                                value="{{ old('existing_hosting_domain') }}" id="hostingprovider">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="completiondate">What is your desired project completion date?</label><br>
-                            <input name="req_completed_date" type="text" id="completiondate" value="{{old('req_completed_date')}}">
+                            <input name="req_completed_date" type="text" id="completiondate"
+                                value="{{ old('req_completed_date') }}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="information">Is there any other information you’d like to share about your
                                 project?</label>
-                            <input name="other_project_info" type="text" id="information" value="{{old('other_project_info')}}">
+                            <input name="other_project_info" type="text" id="information"
+                                value="{{ old('other_project_info') }}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="multiplepages">Are you interested in getting a One Pager website made or a
                                 website with multiple pages?</label>
-                            <input name="one_or_multiple_page" type="text" id="multiplepages" value="{{old('one_or_multiple_page')}}">
+                            <input name="one_or_multiple_page" type="text" id="multiplepages"
+                                value="{{ old('one_or_multiple_page') }}">
                         </div>
                         <div class="form-group form-check col-md-12">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agree_terms"
@@ -416,8 +469,8 @@
                         value="Previous" />
                     <button type="submit" name="submit" class="submit action-button" disabled id="submitBtn"
                         value="Submit">Submit</button>
-                    </fieldset>
-                    <input type="hidden" name="g-recaptcha-token" id="g-recaptcha-token">
+                </fieldset>
+                <input type="hidden" name="g-recaptcha-token" id="g-recaptcha-token">
             </form>
         </div>
     </div>
@@ -433,142 +486,16 @@
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script> --}}
 
     <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+        }
+
+        function hideLoader() {
+            document.getElementById('loader').style.display = 'none';
+        }
         $(document).ready(function() {
-            // Initialize form validation
-            $("#msform").validate({
-                errorClass: "is-invalid",
-                validClass: "is-valid",
-                rules: {
-                    full_name: {
-                        required: true,
-                        minlength: 3
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    phone: {
-                        required: true,
-                        minlength: 10,
-                        maxlength: 15
-                    },
-                    company_name: {
-                        required: true
-                    },
-                    industry_type: {
-                        required: true
-                    },
-                    purpose: {
-                        required: true
-                    },
-                    existing_website: {
-                        required: true
-                    },
-                    example_website: {
-                        required: true
-                    },
-                    existing_logo: {
-                        required: true
-                    },
-                    assistance: {
-                        required: true
-                    },
-                    appear_data: {
-                        required: true
-                    },
-                    req_key_feature: {
-                        required: true
-                    },
-                    req_integration: {
-                        required: true
-                    },
-                    existing_hosting_domain: {
-                        required: true
-                    },
-                    req_completed_date: {
-                        required: true
-                    },
-                    req_assistance: {
-                        required: true
-                    },
-                    other_project_info: {
-                        required: true
-                    },
-                    one_or_multiple_page: {
-                        required: true
-                    },
-                    agree_terms: {
-                        required: true
-                    },
-                },
-                messages: {
-                    full_name: {
-                        required: "This field is required",
-                        minlength: "Name must be at least 3 characters."
-                    },
-                    email: {
-                        required: "Please enter your email address.",
-                        email: "Please enter a valid email address."
-                    },
-                    phone: {
-                        required: "This field is required",
-                        // minlength: "Phone number must be at least 10 digits.",
-                        // maxlength: "Phone number cannot exceed 15 digits."
-                    },
-                    company_name: {
-                        required: "This field is required"
-                    },
-                    purpose: {
-                        required: "This field is required"
-                    },
-                    industry_type: {
-                        required: "This field is required"
-                    },
-                    existing_website: {
-                        required: "This field is required"
-                    },
-                    example_website: {
-                        required: "This field is required"
-                    },
-                    existing_logo: {
-                        required: "This field is required"
-                    },
-                    assistance: {
-                        required: "This field is required"
-                    },
-                    appear_data: {
-                        required: "This field is required"
-                    },
-                    req_key_feature: {
-                        required: "This field is required"
-                    },
-                    req_integration: {
-                        required: "This field is required"
-                    },
-                    req_assistance: {
-                        required: "This field is required"
-                    },
-                    existing_hosting_domain: {
-                        required: "This field is required"
-                    },
-                    req_completed_date: {
-                        required: "This field is required"
-                    },
-                    other_project_info: {
-                        required: "This field is required"
-                    },
-                    one_or_multiple_page: {
-                        required: "This field is required"
-                    },
-                    agree_terms: {
-                        required: "You Must Agree with terms before proceed"
-                    },
-                },
-                errorPlacement: function(error, element) {
-                    error.insertAfter(element);
-                    error.addClass('text-danger');
-                }
-            });
+
+
 
             // Custom next button click event
             $(".next").click(function() {
@@ -637,32 +564,176 @@
         //   $(".submit").click(function(){
         //       return false;
         //   })
-        $('#exampleCheck1').on('change',function(){
-            if(this.checked){
-                $('#submitBtn').attr('disabled',false);
-            }else{
-                $('#submitBtn').attr('disabled',true);
+        $('#exampleCheck1').on('change', function() {
+            if (this.checked) {
+                $('#submitBtn').attr('disabled', false);
+            } else {
+                $('#submitBtn').attr('disabled', true);
             }
         })
-        $('#submitBtn').on('click',function(){
-            this.value = 'Wait...'
-            $('#submitBtn').text('Wait...');
+        // Initialize form validation
+        $("#msform").validate({
+            errorClass: "is-invalid",
+            validClass: "is-valid",
+            rules: {
+                full_name: {
+                    required: true,
+                    minlength: 3
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    minlength: 10,
+                    maxlength: 15
+                },
+                company_name: {
+                    required: true
+                },
+                industry_type: {
+                    required: true
+                },
+                purpose: {
+                    required: true
+                },
+                existing_website: {
+                    required: true
+                },
+                example_website: {
+                    required: true
+                },
+                existing_logo: {
+                    required: true
+                },
+                assistance: {
+                    required: true
+                },
+                appear_data: {
+                    required: true
+                },
+                req_key_feature: {
+                    required: true
+                },
+                req_integration: {
+                    required: true
+                },
+                existing_hosting_domain: {
+                    required: true
+                },
+                req_completed_date: {
+                    required: true
+                },
+                req_assistance: {
+                    required: true
+                },
+                other_project_info: {
+                    required: true
+                },
+                one_or_multiple_page: {
+                    required: true
+                },
+                agree_terms: {
+                    required: true
+                },
+            },
+            messages: {
+                full_name: {
+                    required: "This field is required",
+                    minlength: "Name must be at least 3 characters."
+                },
+                email: {
+                    required: "Please enter your email address.",
+                    email: "Please enter a valid email address."
+                },
+                phone: {
+                    required: "This field is required",
+                    // minlength: "Phone number must be at least 10 digits.",
+                    // maxlength: "Phone number cannot exceed 15 digits."
+                },
+                company_name: {
+                    required: "This field is required"
+                },
+                purpose: {
+                    required: "This field is required"
+                },
+                industry_type: {
+                    required: "This field is required"
+                },
+                existing_website: {
+                    required: "This field is required"
+                },
+                example_website: {
+                    required: "This field is required"
+                },
+                existing_logo: {
+                    required: "This field is required"
+                },
+                assistance: {
+                    required: "This field is required"
+                },
+                appear_data: {
+                    required: "This field is required"
+                },
+                req_key_feature: {
+                    required: "This field is required"
+                },
+                req_integration: {
+                    required: "This field is required"
+                },
+                req_assistance: {
+                    required: "This field is required"
+                },
+                existing_hosting_domain: {
+                    required: "This field is required"
+                },
+                req_completed_date: {
+                    required: "This field is required"
+                },
+                other_project_info: {
+                    required: "This field is required"
+                },
+                one_or_multiple_page: {
+                    required: "This field is required"
+                },
+                agree_terms: {
+                    required: "You Must Agree with terms before proceed"
+                },
+            },
+            errorPlacement: function(error, element) {
+                error.insertAfter(element);
+                error.addClass('text-danger');
+            }
+        });
+        $('#submitBtn').on('click', function() {
+            // e.preventDefault();
+
+            if (!$("#msform").valid()) {
+                return false; // Prevent navigation if the form is invalid
+            } else {
+                $('#submitBtn').text('Wait...');
+                $("#msform").addClass('blur');
+                showLoader();
+                setTimeout(function(){
+                    $('#msform').submit();
+                }, 1000)
+            }
         })
     </script>
- <script src="https://www.google.com/recaptcha/api.js?render=6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT"></script>
- <script>
-     grecaptcha.ready(function() {
-         grecaptcha.execute('6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT', {
-             action: 'submit'
-         }).then(function(token) {
-             document.getElementById('g-recaptcha-response').value = token;
-             if(document.getElementById('g-recaptcha-token'))
-             document.getElementById('g-recaptcha-token').value = token;
-         });
-     });
-
-</script>
-<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LeZ8bAqAAAAANEGvcL4p8RkFZ2lttgNdj14cilT', {
+                action: 'submit'
+            }).then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
+                if (document.getElementById('g-recaptcha-token'))
+                    document.getElementById('g-recaptcha-token').value = token;
+            });
+        });
+    </script>
+    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
 </body>
 
