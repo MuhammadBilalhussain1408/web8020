@@ -41,7 +41,6 @@
             width: 100%;
             overflow-x: hidden;
             position: absolute;
-            transform: scale(90%);
         }
 
         /*form styles*/
@@ -296,11 +295,11 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="fullname">Full Name</label>
-                            <input name="full_name" type="text" id="fullname" value="{{old('full_name')}}" placeholder="First Name">
+                            <input name="full_name" type="text" id="fullname" value="{{old('full_name')}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email Address</label>
-                            <input name="email" type="email" id="email" value="{{old('email')}}" placeholder="Email Address">
+                            <input name="email" type="email" id="email" value="{{old('email')}}">
                             @error('email')
                                 <span class="text-danger">
                                     {{ $errors->first('email') }}
@@ -309,16 +308,15 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Phone Number</label>
-                            <input name="phone" type="tel" id="phone" value="{{old('phone')}}" placeholder="Phone Number">
+                            <input name="phone" type="tel" id="phone" value="{{old('phone')}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="companyname">Company/Business Name</label>
-                            <input name="company_name" type="text" value="{{old('company_name')}}" id="companyname"
-                                placeholder="Company/Business Name">
+                            <input name="company_name" type="text" value="{{old('company_name')}}" id="companyname">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Industrytype">Industry Type</label>
-                            <input name="industry_type" type="text" value="{{old('industry_type')}}" id="Industrytype" placeholder="Industry Type">
+                            <input name="industry_type" type="text" value="{{old('industry_type')}}" id="Industrytype">
                         </div>
                     </div>
                     <input type="button" name="next" class="next action-button" value="Next" />
@@ -331,31 +329,26 @@
                             <label for="primarypurpose">What is the primary purpose of the website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., e-commerce, portfolio, blog, informational, lead generation)</h5>
-                            <input name="purpose" type="text" id="primarypurpose" value="{{old('purpose')}}"
-                                placeholder="What is the primary purpose of the website?">
+                            <input name="purpose" type="text" id="primarypurpose" value="{{old('purpose')}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existingwebsite">Do you have an existing website?</label><br>
                             <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 If yes, please provide the URL:</h5>
-                            <input name="existing_website" type="text" id="existingwebsite" value="{{old('existing_website')}}"
-                                placeholder="Do you have an existing website?">
+                            <input name="existing_website" type="text" id="existingwebsite" value="{{old('existing_website')}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="specificdesign">Do you have specific design preferences or examples of websites
                                 you like?</label>
-                            <input name="example_website" type="text" id="specificdesign" value="{{old('example_website')}}"
-                                placeholder="Do you have specific design preferences or examples of websites you like?">
+                            <input name="example_website" type="text" id="specificdesign" value="{{old('example_website')}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="existinglogo">Do you have an existing logo?</label>
-                            <input name="existing_logo" type="text" id="existinglogo" value="{{old('existing_logo')}}"
-                                placeholder="Do you have an existing logo?">
+                            <input name="existing_logo" type="text" id="existinglogo" value="{{old('existing_logo')}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="assistance">Do you need assistance with content creation?</label>
-                            <input name="req_assistance" type="text" id="assistance" value="{{old('req_assistance')}}"
-                                placeholder="Do you need assistance with content creation?">
+                            <input name="req_assistance" type="text" id="assistance" value="{{old('req_assistance')}}">
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -368,22 +361,21 @@
                         <div class="form-group col-md-12">
                             <label for="imagesvideos">Please provide text, images, videos that you would like to appear
                                 on your website?</label>
-                            <input name="appear_data" type="text" value="{{old('appear_data')}}" id="imagesvideos"
-                                placeholder="Please provide text, images, videos that you would like to appear on your website?">
+                            <input name="appear_data" type="text" value="{{old('appear_data')}}" id="imagesvideos">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="keyfeatures">List 3-5 Key features you would like to have on your
                                 website?</label><br>
-                            <h5
-                                style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
+                            <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
                                 (e.g., contact forms, online booking, payment gateways, live chat, blog)</h5>
-                            <input name="req_key_feature" type="text"  value="{{old('req_key_feature')}}"id="keyfeatures"
-                                placeholder="List 3-5 Key features you would like to have on your website?">
+                            <input name="req_key_feature" type="text"  value="{{old('req_key_feature')}}"id="keyfeatures">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="integrations">Do you need any integrations?</label>
-                            <input name="req_integration" type="text" id="integrations" value="{{old('req_integration')}}"
-                                placeholder="(e.g., social media, email marketing, CRM, analytics)">
+                            <label for="integrations">Do you need any integrations?</label><br>
+                            <h5 style="font-size: 16px;color: black;font-weight: 800;margin: 0;padding-bottom: 1.8rem;">
+                                (e.g., social media, email marketing, CRM, analytics)
+                            </h5>
+                            <input name="req_integration" type="text" id="integrations" value="{{old('req_integration')}}">
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous"
@@ -396,25 +388,21 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="hostingprovider">Do you have a domain name and hosting provider?</label><br>
-                            <input name="existing_hosting_domain" type="text" value="{{old('existing_hosting_domain')}}" id="hostingprovider"
-                                placeholder="Do you have a domain name and hosting provider?">
+                            <input name="existing_hosting_domain" type="text" value="{{old('existing_hosting_domain')}}" id="hostingprovider">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="completiondate">What is your desired project completion date?</label><br>
-                            <input name="req_completed_date" type="text" id="completiondate" value="{{old('req_completed_date')}}"
-                                placeholder="What is your desired project completion date?">
+                            <input name="req_completed_date" type="text" id="completiondate" value="{{old('req_completed_date')}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="information">Is there any other information you’d like to share about your
                                 project?</label>
-                            <input name="other_project_info" type="text" id="information" value="{{old('other_project_info')}}"
-                                placeholder="Is there any other information you’d like to share about your project?">
+                            <input name="other_project_info" type="text" id="information" value="{{old('other_project_info')}}">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="multiplepages">Are you interested in getting a One Pager website made or a
                                 website with multiple pages?</label>
-                            <input name="one_or_multiple_page" type="text" id="multiplepages" value="{{old('one_or_multiple_page')}}"
-                                placeholder="Are you interested in getting a One Pager website made or a website with multiple pages?">
+                            <input name="one_or_multiple_page" type="text" id="multiplepages" value="{{old('one_or_multiple_page')}}">
                         </div>
                         <div class="form-group form-check col-md-12">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agree_terms"

@@ -39,13 +39,96 @@
             position: absolute;
         }
 
+        .abr-para{
+            text-align: center;
+            font-size: 25px;
+            padding-top: 14rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+        .btn {
+            height: 50px;
+            line-height: 43px;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            top: 45px;
+            transform: translate(-50%, -50%);
+            -webkit-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+
+        .text {
+            padding: 0 50px;
+            visibility: hidden;
+        }
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transform-style: flat;
+            transform-style: flat;
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+        }
+
+        .flip-front {
+            color: white;
+            border: 2px solid #e1612e;
+            background-color: #e1612e;
+            -webkit-transform: rotateX(0deg) translateZ(25px);
+            -ms-transform: rotateX(0deg) translateZ(25px);
+            -o-transform: rotateX(0deg) translateZ(25px);
+            transform: rotateX(0deg) translateZ(25px);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .flip-back {
+            color: #fff;
+            background-color: #313131;
+            border: 2px solid #313131;
+            -webkit-transform: rotateX(90deg) translateZ(25px);
+            -ms-transform: rotateX(90deg) translateZ(25px);
+            -o-transform: rotateX(90deg) translateZ(25px);
+            transform: rotateX(90deg) translateZ(25px);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .btn:hover .flip-front {
+            -webkit-transform: rotateX(-90deg) translateZ(25px);
+            -ms-transform: rotateX(-90deg) translateZ(25px);
+            -o-transform: rotateX(-90deg) translateZ(25px);
+            transform: rotateX(-90deg) translateZ(25px);
+        }
+
+        .btn:hover .flip-back {
+            -webkit-transform: rotateX(0deg) translateZ(25px);
+            -ms-transform: rotateX(0deg) translateZ(25px);
+            -o-transform: rotateX(0deg) translateZ(25px);
+            transform: rotateX(0deg) translateZ(25px);
+        }
+
 
 
         @media only screen and (min-width: 360px) and (max-width: 740px),
         only screen and (min-width: 412px) and (max-width: 915px),
         only screen and (min-width: 767px) and (max-width: 991px) {
 
-
+            .abr-para {
+                text-align: center;
+                font-size: 22px;
+                padding-top: 14rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
 
         }
 
@@ -60,11 +143,18 @@
 
 <div class="row">
     <div class="col-md-12">
-        <p class="abr-para" style="text-align: center;font-size: 25px;">
+        <p class="abr-para">
             <span style="color: #e1612e;font-weight: bold;">"Hi {{$full_name}}",</span><br>
             Thank you for taking the time to fill out our website questionnaire. We’ve received your responses and will review them to better understand your project needs.
             Our team will get in touch with you shortly to discuss the next steps.
         </p>
+        <div>
+            <a href="/" class="btn">
+                <span class="text">Text</span>
+                <span class="flip-front">Go Back</span>
+                <span class="flip-back">Go Back</span>
+            </a>
+        </div>
     </div>
 </div>
 

@@ -32,7 +32,7 @@ class QuestionAdminMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('New 80/20 Eatery Contact Form')
+            ->subject('New Website Questionnaire Form')
             ->view('mail-layouts.admin')
             ->with('data', $this->data);
 //        return $this->view('view.name');

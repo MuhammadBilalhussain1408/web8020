@@ -32,7 +32,7 @@ class QuestionCustomerMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('New 80/20 Eatery Contact Form')
+            ->subject('Thank You for Submitting Your Website Questionnaire!')
             ->view('mail-layouts.customer')
             ->with('data', $this->data);
 //        return $this->view('view.name');
