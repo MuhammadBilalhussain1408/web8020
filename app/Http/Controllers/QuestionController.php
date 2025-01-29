@@ -20,7 +20,7 @@ class QuestionController extends Controller
         if ($isCaptchaValid) {
             $data = WebEatery::create($request->except('_token', 'submit','g-recaptcha-token'));
             $full_name = $data->full_name;
-            Mail::to($data->email)->send(new QuestionAdminMail($data));
+            Mail::to('info@8020eatery.com')->send(new QuestionAdminMail($data));
             Mail::to($data->email)->send(new QuestionCustomerMail($data));
             return view('thankyou', compact('full_name'));
         } else {
